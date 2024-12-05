@@ -1,0 +1,45 @@
+<!-- Creation of mini Calendar Using HTML CSS Javascript | Display time with help of Date object completed -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calendar Using JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="hero">
+    <div class="calendar">
+        <div class="left">
+            <p id="date">01</p>
+            <p id="day">Sunday</p>
+        </div>
+        <div class="right">
+            <p id="month">January</p>
+            <p id="year">2020</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    const date = document.getElementById("date")
+    const day = document.getElementById("day")
+    const month = document.getElementById("month")
+    const year = document.getElementById("year")
+
+    const todayDate = new Date();
+    
+    const weekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+
+    const allMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+
+    date.innerHTML = (todayDate.getDate()<10?"0":"")+ todayDate.getDate()
+    day.innerHTML = weekDays[todayDate.getDay()]
+    // kyuki zero index pe january hai aur jo new date object hai javascript ka woh bhi 0 se se hi month st krta hai
+    month.innerHTML = allMonths[todayDate.getMonth()]
+    year.innerHTML = todayDate.getFullyear()
+
+    // javascript mein months 0 se st hote hain (for general knowledge)
+</script>
+</body>
+</html>
